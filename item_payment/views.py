@@ -1,7 +1,7 @@
 import stripe
 from django.shortcuts import redirect
 from django.views import View
-from django.views.generic import DetailView, TemplateView
+from django.views.generic import DetailView, TemplateView, ListView
 from .models import Item
 from core import settings
 
@@ -12,6 +12,12 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 class ItemDetailView(DetailView):
     queryset = Item.objects.all()
     template_name = 'item_payment/item.html'
+
+
+class ItemListView(ListView):
+    queryset = Item.objects.all()
+    template_name = 'item_payment/items.html'
+    context_object_name = 'items'
 
 
 class CreateCheckoutSessionView(View):
