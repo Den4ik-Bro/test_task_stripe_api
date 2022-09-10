@@ -12,4 +12,9 @@
         {% endfor %}
     </div>
 
+    <form action="{% url 'item_payment:order' pk=1 %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="оплатить заказ">
+    </form>
+
 {% endblock %}
