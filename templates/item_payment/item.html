@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ item.name }}</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ item.name }}
+{% endblock %}
+
+{% block content %}
+
     <div style="text-align:center">
         <p>{{ item.name }}</p>
         цена: <p>{{ item.price }}.00 $</p>
@@ -13,5 +14,5 @@
             <input type="submit" value="купить">
         </form>
     </div>
-</body>
-</html>
+
+{% endblock %}

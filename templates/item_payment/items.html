@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Список товаров</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}
+    Все товары
+{% endblock %}
+
+{% block content %}
+
     <div style="text-align:center">
         {% for item in items %}
             <a href="{% url 'item_payment:item' pk=item.pk %}">{{ item.name }}</a><br>
         {% endfor %}
     </div>
-</body>
-</html>
+
+{% endblock %}

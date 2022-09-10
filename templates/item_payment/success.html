@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Платеж принят</title>
-</head>
-<body>
-    <p>Все прошло успешно!</p>
-    <a href="#">Хотите купить что-то еще?</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+    Успешно
+{% endblock %}
+
+{% block content %}
+    <div style="text-align:center">
+        <p>Все прошло успешно!</p>
+        <a href="{% url 'item_payment:items' %}">Хотите купить что-то еще?</a>
+    </div>
+{% endblock %}

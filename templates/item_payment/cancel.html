@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Отмена платежа</title>
-</head>
-<body>
-    <p>Оплата отменена</p>
-    <a href="{% url 'item_payment:item' pk=1 %}">вернуться к покупкам</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+    Платеж отменен
+{% endblock %}
+
+{% block content %}
+    <div style="text-align:center">
+        <p>Оплата отменена</p>
+        <a href="{% url 'item_payment:items' %}">вернуться к покупкам</a>
+    </div>
+{% endblock %}
