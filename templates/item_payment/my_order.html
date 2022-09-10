@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Все товары
+{% endblock %}
+
+{% block content %}
+
+    <div style="text-align:center">
+        {% for item in order.items.all %}
+            <p>{{ item.name }} <a href="{% url 'item_payment:edit_order' pk=item.pk %}">x</a></p>
+        {% endfor %}
+    </div>
+    <br>
+    <form action="{% url 'item_payment:pay_order' pk=order.pk %}" method="POST" style="text-align:center">
+        {% csrf_token %}
+        <input type="submit" value="оплатить">
+    </form>
+
+{% endblock %}

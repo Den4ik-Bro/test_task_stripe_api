@@ -23,4 +23,11 @@ class Item(models.Model):
 
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='клиент')
-    items = models.ManyToManyField(Item, verbose_name='товары')
+    items = models.ManyToManyField(Item, blank=True, verbose_name='товары')
+
+    class Meta:
+        verbose_name = 'Заказ'
+        verbose_name_plural = 'Заказы'
+
+    def __str__(self):
+        return f'заказы {self.user.username}'

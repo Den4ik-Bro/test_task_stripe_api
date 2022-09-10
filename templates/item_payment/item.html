@@ -13,6 +13,11 @@
             {% csrf_token %}
             <input type="submit" value="купить">
         </form>
+        <br>
+        <form action="{% url 'item_payment:add_item_to_order' pk=item.pk %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="добавить в заказ">
+        </form>
     </div>
 
 {% endblock %}
