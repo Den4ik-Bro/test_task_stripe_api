@@ -1,6 +1,5 @@
 asgiref==3.4.1
 certifi==2022.6.15.1
-charset-normalizer==2.1.1
 Django==3.2.15
 idna==3.3
 python-dotenv==0.20.0
