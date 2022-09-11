@@ -9,7 +9,7 @@
   - Устанавливаем зависимости командой pip install -r requirements.txt
   - Создать .env файл и прописать в нем следующие переменные SECRET_KEY, DEBUG, STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY (последние две нужно получить 
   после регистрации на https://stripe.com по адресу https://dashboard.stripe.com/test/developers )
-  - Выполняем миграции командой "python manage.py makemigrations" и "python manage.py migrate" из директории проекта. При этом будут созданы три объекта "Item"
+  - Выполняем миграции командой "python manage.py migrate" из директории проекта. При этом будут созданы три объекта "Item"
   - Создаем супер-пользователя командой python manage.py createsuperuser
   - Запускаем проект командой python manage.py runserver
   
